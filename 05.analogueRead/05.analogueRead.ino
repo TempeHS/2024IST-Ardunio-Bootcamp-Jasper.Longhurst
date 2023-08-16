@@ -16,10 +16,23 @@
     https://github.com/TempeHS/TempeHS_Ardunio_Boilerplate/blob/main/Ardunio_Bootcamp/05.serialRead/Bootcamp-serialRead.png
 */
 
-void setup() {
+unsigned static int myPOT = A0;
+unsigned static int lightSensor = A1;
+unsigned static int soundSensor = A2;
 
+void setup() {
+Serial.begin(9600);
 }
 
 void loop() {
-
+unsigned int POTval = analogRead(myPOT);
+  unsigned int Lightval = analogRead(lightSensor);
+    unsigned int Soundval = analogRead(soundSensor);
+Serial.print("myPot:");
+Serial.print(POTval);
+Serial.print(" lightval:");
+Serial.print(lightSensor);
+Serial.print(" soundval:");
+Serial.print(soundSensor);
+Serial.println();
 }
