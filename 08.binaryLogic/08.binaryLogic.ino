@@ -1,5 +1,5 @@
 /*
-  Author: 
+  Author: Jasper Longhurst
    Learning Intention: The students understand binary logic and apply it to a range of control structures.
     1. I understand Binary Logic is asking questions that only have a true and false outcome
     2. I can apply different comparison operators to get a desired outcome in a basic if else control structure 
@@ -30,11 +30,36 @@
   Schematic: 
     
 */
+unsigned int Var1 = 5;
+unsigned int Var2 = 10;
+unsigned int result1 = Var1 * Var2;
+
 
 void setup() {
+Serial.begin(9600);
+Serial.println("Configured to 9600");
+Serial.println("------------------------");
+Serial.print(Var1);
+Serial.print(" x ");
+Serial.print(Var2);
+Serial.print(" = ");
+Serial.println(result1);
 
+
+if (result1 == 30) {
+  Serial.println("result is 30");
+} 
+else if (result1 < 50) {
+  Serial.print("result (");
+  Serial.print(result1);
+  Serial.println(") is less than 50");
+} 
+else if (result1 != 30) {
+  Serial.print("result (");
+  Serial.print(result1);
+  Serial.println(") does not equal 30");
 }
-
+}
 void loop() {
 
 }
