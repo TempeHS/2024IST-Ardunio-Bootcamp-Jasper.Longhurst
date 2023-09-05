@@ -24,6 +24,7 @@
 Servo myServo;
 static unsigned int myServoPin = 7;
 static unsigned int myUSPin = 6;
+unsigned long rangeInCM;
 
 Ultrasonic myUSsensor(myUSPin);
 
@@ -39,18 +40,13 @@ void setup() {
 // The loop function runs over and over again forever
 void loop() {
 
-  unsigned long rangeInCM = myUSsensor.MeasureInCentimeters();
-  Serial.println(rangeInCM);
+  readUS();
 
-  /*myServo.write(rangeInCM/3);
-  delay(40);*/
-
-  if (rangeInCM <= 20) {
-    myServo.write(rangeInCM);
+  if (rangeInCM <= 25) {
+    openGate ();
+  }
+  else {
+    closeGate();
   }
 
-  /*for (int i = 0; i <= 0; i++) {
-  myServo.write(i);
-  delay(20);
-  }*/
 }
