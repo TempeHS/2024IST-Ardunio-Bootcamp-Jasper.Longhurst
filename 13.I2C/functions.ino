@@ -10,3 +10,8 @@ void updateOLED (float theTemp) {
   u8g2.print("°C");
   u8g2.sendBuffer();                  // transfer internal memory to the display
 }
+
+
+float sampleTemparature() {
+    return myPressureSensor.getTemperature();
+}
